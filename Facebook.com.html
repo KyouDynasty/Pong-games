@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Login Demo</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .fb-btn {
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(24,119,242,0.1);
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    .fb-btn img {
+      width: 24px;
+      height: 24px;
+    }
+    #user-info {
+      display: none;
+      background: #fff;
+      padding: 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    #user-info img {
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <button class="fb-btn" onclick="fbLogin()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+    Login with Facebook
+  </button>
+  <div id="user-info">
+    <img id="profile-pic" src="" alt="Profile Picture" width="80" height="80"><br>
+    <span id="user-name"></span><br>
+    <span id="user-email"></span>
+  </div>
+  <!-- Facebook SDK -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : 'YOUR_APP_ID', // <-- Put your Facebook App ID here
+        cookie     : true,
+        xfbml      : true,
+       (s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    function fbLogin() {
+      FB.login(function(response) {
+        if (response.status === 'connected') {
+          FB.api('/me', {fields: 'name,email,picture'}, function(user) {
+            document.getElementById('user-info').style.display = 'block';
+            document.getElementById('profile-pic').src = user.picture.data.url;
+            document.getElementById('user-name').textContent = user.name;
+            document.getElementById('user-email').textContent = user.email || 'No email permission';
+          });
+        } else {
+          alert('Facebook login failed or cancelled.');
+        }
+      }, {scope: 'public_profile,email'});
+    }
+  </script>
+</body>
+</html>
