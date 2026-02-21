@@ -1,77 +1,136 @@
-Power By Reu Von
+<!-- Power By Reu Von -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laughing Animation</title>
+    <title>Laughing Animation & Portal</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
         .face {
             position: relative;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             background-color: yellow;
             border-radius: 50%;
-            margin: 50px auto;
+            margin: 30px auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         .eyes {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             background-color: black;
             border-radius: 50%;
-            top: 30px;
+            top: 50px;
         }
         .left-eye {
-            left: 25px;
+            left: 40px;
         }
         .right-eye {
-            right: 25px;
+            right: 40px;
         }
         .mouth {
             position: absolute;
-            width: 50px;
-            height: 20px;
+            width: 60px;
+            height: 30px;
             border-bottom-left-radius: 50%;
             border-bottom-right-radius: 50%;
-            border: 2px solid black;
-            top: 60px;
-            left: 25px;
-            animation: laugh 2s infinite;
+            border: 3px solid black;
+            top: 85px;
+            left: 45px;
+            animation: laugh 0.6s infinite;
         }
         @keyframes laugh {
-            0% {
+            0%, 100% {
                 transform: scaleY(1);
             }
             50% {
-                transform: scaleY(1.5);
+                transform: scaleY(1.4);
             }
-            100% {
-                transform: scaleY(1);
-            }
+        }
+        .title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .subtitle {
+            color: #e74c3c;
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-register {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-register:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        .btn-login {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .btn-login:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
         }
     </style>
 </head>
 <body>
-    <div class="face">
-        <div class="eyes left-eye"></div>
-        <div class="eyes right-eye"></div>
-        <div class="mouth"></div>
+    <div class="container">
+        <div class="title">Welcome!</div>
+        <div class="face">
+            <div class="eyes left-eye"></div>
+            <div class="eyes right-eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <p class="subtitle">Join Here - Free Mobile Legends Bang Bang</p>
+        <div class="button-group">
+            <button class="btn-register" onclick="alert('Register functionality to be added')">Register</button>
+            <button class="btn-login" onclick="alert('Login functionality to be added')">Login</button>
+        </div>
     </div>
 </body>
 </html>
-
-
-
-<!DOCTYPE html>
-<p style="color: red;">Join Here Free Mobilelegends Bang Bang</p> 
-<html>
-<head></head>
-  <a href="file:///storage/emulated/0/Kyou.Web.Code.Programmer.Hacker/Piso%20Wifi%20Register.html">
-    <button types="button">Register</button> 
-  </a>    
-  <a href="file:///storage/emulated/0/Kyou.Web.Code.Programmer.Hacker/Logi.Piso%20wigi.html">
-    <button types="button">Login</button>
-  </a> 
-    
